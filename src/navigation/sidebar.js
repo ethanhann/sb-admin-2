@@ -57,6 +57,23 @@ angular.module('sbAdmin2').service('sidebar', function () {
                 ]
             },
             {
+                text: 'Multi-Level Dropdown',
+                iconClass: 'fa-sitemap',
+                children: [
+                    { text: 'Second Level Item', state: 'sbAdmin2.authenticated.blank' },
+                    { text: 'Second Level Item', state: 'sbAdmin2.authenticated.blank' },
+                    {
+                        text: 'Third Level',
+                        children: [
+                            { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' },
+                            { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' },
+                            { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' },
+                            { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' }
+                        ]
+                    }
+                ]
+            },
+            {
                 text: 'Sample Pages',
                 iconClass: 'fa-files-o',
                 children: [
@@ -74,43 +91,19 @@ angular.module('sbAdmin2').service('sidebar', function () {
     }
 });
 
-//<li>
-//    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-//    <ul class="nav nav-second-level">
-//        <li>
-//            <a href="#">Second Level Item</a>
-//        </li>
-//        <li>
-//            <a href="#">Second Level Item</a>
-//        </li>
-//        <li>
-//            <a href="#">Third Level <span class="fa arrow"></span></a>
-//            <ul class="nav nav-third-level">
-//                <li>
-//                    <a href="#">Third Level Item</a>
-//                </li>
-//                <li>
-//                    <a href="#">Third Level Item</a>
-//                </li>
-//                <li>
-//                    <a href="#">Third Level Item</a>
-//                </li>
-//                <li>
-//                    <a href="#">Third Level Item</a>
-//                </li>
-//            </ul>
-//            <!-- /.nav-third-level -->
-//        </li>
-//    </ul>
-//    <!-- /.nav-second-level -->
-//</li>
-
 angular.module('sbAdmin2').directive('sidebar', function (sidebar) {
     return {
         restrict: 'AE',
         templateUrl: 'navigation/sidebar.html',
         link: function (scope, element) {
             scope.items = angular.copy(sidebar.items);
+            scope.depth = 0;
+            scope.incrementDepth = function () {
+                scope.depth += 1;
+            };
+            scope.getDepthOf = function (item) {
+                scope.depth -= 1;
+            };
         }
     }
 });
