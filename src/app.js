@@ -7,10 +7,6 @@ function ($stateProvider, $urlRouterProvider) {
             abstract: true,
             templateUrl: 'app.html'
         })
-        .state('sbAdmin2.index', {
-            url: '/',
-            templateUrl: 'index/index.html'
-        })
         .state('sbAdmin2.blank', {
             url: '/blank',
             templateUrl: 'blank/blank.html'
@@ -18,6 +14,10 @@ function ($stateProvider, $urlRouterProvider) {
         .state('sbAdmin2.buttons', {
             url: '/buttons',
             templateUrl: 'buttons/buttons.html'
+        })
+        .state('sbAdmin2.dashboard', {
+            url: '/',
+            templateUrl: 'dashboard/dashboard.html'
         })
         .state('sbAdmin2.flot', {
             url: '/flot',
