@@ -37,7 +37,8 @@ function ($stateProvider, $urlRouterProvider) {
         })
         .state('sbAdmin2.morris', {
             url: '/morris',
-            templateUrl: 'morris/morris.html'
+            templateUrl: 'morris/morris.html',
+            controller: 'MorrisCtrl'
         })
         .state('sbAdmin2.notifications', {
             url: '/notifications',
