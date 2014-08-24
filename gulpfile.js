@@ -64,7 +64,7 @@ gulp.task('wiredep', function () {
             next()
         }))
         .pipe(wiredep({
-            //exclude: [/html5-boilerplate/, 'bower_components/bootstrap/dist/js']
+            exclude: ['bower_components/bootstrap/dist/js']
         }))
         .pipe(gulp.dest(config.src));
 });

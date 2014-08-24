@@ -24,14 +24,13 @@
   "dependencies": {
     "angular": "~1.2.23",
     "angular-ui-router": "~0.2.10",
-    "metisMenu": "~1.1.2",
-    "jQuery": "~2.1.1",
     "bootstrap": "~3.2.0",
     "font-awesome": "~4.1.0",
     "html5shiv": "~3.7.2",
     "respond": "~1.4.2",
     "DataTables": "~1.10.2",
     "morrisjs": "~0.5.1",
-    "bootstrap-social": "~4.6.0"
+    "bootstrap-social": "~4.6.0",
+    "angular-bootstrap": "~0.11.0"
   }
 }

@@ -1,4 +1,7 @@
-angular.module('sbAdmin2', ['ui.router'])
+angular.module('sbAdmin2', [
+    'ui.bootstrap',
+    'ui.router'
+])
 .config(['$stateProvider', '$urlRouterProvider',
 function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
