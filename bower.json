@@ -31,6 +31,7 @@
     "html5shiv": "~3.7.2",
     "respond": "~1.4.2",
     "DataTables": "~1.10.2",
-    "morrisjs": "~0.5.1"
+    "morrisjs": "~0.5.1",
+    "bootstrap-social": "~4.6.0"
   }
 }
