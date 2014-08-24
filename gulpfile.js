@@ -46,8 +46,8 @@ gulp.task('bower', function (cb) {
     bower.commands
         .install([])
         .on('end', function () {
-            cb()
-        })
+            cb();
+        });
 });
 
 gulp.task('symlink', ['bower'], function () {
@@ -64,9 +64,9 @@ gulp.task('wiredep', function () {
             next()
         }))
         .pipe(wiredep({
-            exclude: [/html5-boilerplate/, 'bower_components/bootstrap/dist/js'],
+            exclude: [/html5-boilerplate/, 'bower_components/bootstrap/dist/js']
         }))
-        .pipe(gulp.dest(config.src))
+        .pipe(gulp.dest(config.src));
 });
 
 gulp.task('jshint', function () {
@@ -74,72 +74,69 @@ gulp.task('jshint', function () {
         .pipe(changed(config.dst))
         .pipe(template(config))
         .pipe(jshint({predef: ['console']}))
-        .pipe(jshint.reporter(jshintStylish))
+        .pipe(jshint.reporter(jshintStylish));
 });
 
 gulp.task('copy', ['bower'].concat(config.dev ? ['symlink'] : []),
-function () {
-    var jsPipe = [
-        sourcemaps.init(),
-        sourcemaps.write(),
-        'concat',
-        sourcemaps.init({loadMaps: true}),
-        uglify({mangle: false}),
-        rev(),
-        sourcemaps.write('.'),
-    ];
+    function () {
+        var jsPipe = [
+            sourcemaps.init(),
+            sourcemaps.write(),
+            'concat',
+            sourcemaps.init({loadMaps: true}),
+            uglify({mangle: false}),
+            rev(),
+            sourcemaps.write('.')
+        ];
 
-    var htmlPipe = usemin({
-        css: [
-            template(config),
-            autoprefixer(),
-            csso(),
-            rev()
-        ],
-        rawjs: jsPipe,
-        js: [template(config), ngAnnotate()].concat(jsPipe)
+        var htmlPipe = usemin({
+            css: [
+                template(config),
+                autoprefixer(),
+                csso(),
+                rev()
+            ],
+            rawjs: jsPipe,
+            js: [template(config), ngAnnotate()].concat(jsPipe)
+        });
+
+        return gulp.src(config.src + '/**')
+            .pipe(changed(config.dst))
+            .pipe(gulpif(/.*\.(html|css|js)/, template(config)))
+            .pipe(gulpif(!config.dev, gulpif(/.*\/index\.html/, htmlPipe)))
+            .pipe(gulp.dest(config.dst))
+            .pipe(size({title: 'copy', showFiles: true}));
     });
-
-    return gulp.src(config.src + '/**')
-        .pipe(changed(config.dst))
-        .pipe(gulpif(/.*\.(html|css|js)/, template(config)))
-        .pipe(gulpif(!config.dev, gulpif(/.*\/index\.html/, htmlPipe)))
-        .pipe(gulp.dest(config.dst))
-        .pipe(size({title: 'copy', showFiles: true}));
-});
 
 gulp.task('build', ['jshint', 'copy']);
 
-//gulp.task('serve', function (cb) {
-//    var server = connect()
-//        .use(connect.livereload())
-//        .use(connect.static(config.dst))
-//        .listen(config.port)
-//        .on('error', function (error) {
-//            gutil.log(gutil.colors.red('error: ') + 'failed to start server');
-//            cb(error);
-//        })
-//        .on('listening', function () {
-//            var host = os.hostname();
-//            var port = this.address().port;
-//            var url = 'http://' + host + ':' + port;
-//            gutil.log('serving at ' + gutil.colors.magenta(url));
-//            opn(url);
-//            cb();
-//        })
-//});
+gulp.task('serve', function (cb) {
+    var server = connect()
+        .use(connect.livereload())
+        .use(connect.static(config.dst))
+        .listen(config.port)
+        .on('error', function (error) {
+            gutil.log(gutil.colors.red('error: ') + 'failed to start server');
+            cb(error);
+        })
+        .on('listening', function () {
+            var host = os.hostname();
+            var port = this.address().port;
+            var url = 'http://' + host + ':' + port;
+            gutil.log('serving at ' + gutil.colors.magenta(url));
+            opn(url);
+            cb();
+        })
+});
 
-//gulp.task('watch', ['build', 'serve'], function () {
-//    livereload.listen();
-//    gulp.watch('bower.json', ['wiredep']);
-//    gulp.watch(config.src + '/**', ['build']);
-//    gulp.watch(config.dst + '/**', ['deploy']).on('change', function (file) {
-//        livereload.changed(file.path);
-//    })
-//});
+gulp.task('watch', ['build', 'serve'], function () {
+    livereload.listen();
+    gulp.watch('bower.json', ['wiredep']);
+    gulp.watch(config.src + '/**', ['build']);
+});
 
 gulp.task('clean', function (cb) {
-    del(config.dst, cb)
+    del(config.dst, cb);
 });
 
 gulp.task('default', ['build']);

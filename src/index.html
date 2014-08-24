@@ -11,31 +11,29 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
+    <!-- build:css(.) vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/DataTables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="bower_components/morrisjs/morris.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Timeline CSS -->
-    <link href="../css/plugins/timeline.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../css/plugins/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="../css/plugins/timeline.css" rel="stylesheet">-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
     <![endif]-->
 
+    <!-- build:css main.css -->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -916,23 +914,31 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="../js/jquery-1.11.0.js"></script>
+    <!--<script src="../js/jquery-1.11.0.js"></script>-->
+    <!--<script src="../js/bootstrap.min.js"></script>-->
+    <!--<script src="../js/plugins/metisMenu/metisMenu.min.js"></script>-->
+    <!--<script src="../js/plugins/morris/raphael.min.js"></script>-->
+    <!--<script src="../js/plugins/morris/morris.min.js"></script>-->
+    <!--<script src="../js/plugins/morris/morris-data.js"></script>-->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../js/plugins/metisMenu/metisMenu.min.js"></script>
+    <!-- build:rawjs(.) vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jQuery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="bower_components/respond/dest/respond.src.js"></script>
+    <script src="bower_components/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/raphael/raphael.js"></script>
+    <script src="bower_components/mocha/mocha.js"></script>
+    <script src="bower_components/morrisjs/morris.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../js/sb-admin-2.js"></script>
-
+    <!-- build:js main.js -->
+    <script src="js/sb-admin-2.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

@@ -1,2 +1,5 @@
 /bower_components
 /node_modules
+/dev
+/prod
+npm-debug.log

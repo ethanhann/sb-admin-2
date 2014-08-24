@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/ethanhann/sb-admin-2",
   "authors": [
-    "Ethan Hann <ethanhann@gmail.com>",
-    "startbootstrap.com"
+    "Ethan Hann <ethanhann@gmail.com>"
   ],
   "description": "A Bootstrap based admin theme, dashboard, or web application UI.",
   "keywords": [
