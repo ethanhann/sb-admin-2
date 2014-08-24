@@ -126,54 +126,16 @@ angular.module('sbAdmin2').controller('MorrisCtrl', ['$scope', function ($scope)
     };
 }]);
 
-angular.module('sbAdmin2').directive('morrisArea', function () {
+angular.module('sbAdmin2').directive('morris', function () {
     return {
         restrict: 'AE',
         scope: {
-            config: '=morrisArea'
+            config: '=morris',
+            chartType: '=morrisChartType'
         },
         link: function (scope, element) {
             scope.config.element = element;
-            Morris.Area(scope.config);
-        }
-    }
-});
-
-angular.module('sbAdmin2').directive('morrisDonut', function () {
-    return {
-        restrict: 'AE',
-        scope: {
-            config: '=morrisDonut'
-        },
-        link: function (scope, element) {
-            scope.config.element = element;
-            Morris.Donut(scope.config);
-        }
-    }
-});
-
-angular.module('sbAdmin2').directive('morrisBar', function () {
-    return {
-        restrict: 'AE',
-        scope: {
-            config: '=morrisBar'
-        },
-        link: function (scope, element) {
-            scope.config.element = element;
-            Morris.Bar(scope.config);
-        }
-    }
-});
-
-angular.module('sbAdmin2').directive('morrisLine', function () {
-    return {
-        restrict: 'AE',
-        scope: {
-            config: '=morrisLine'
-        },
-        link: function (scope, element) {
-            scope.config.element = element;
-            Morris.Line(scope.config);
+            Morris[scope.chartType](scope.config);
         }
     }
 });
