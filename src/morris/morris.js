@@ -137,5 +137,5 @@ angular.module('sbAdmin2').directive('morris', function () {
             scope.config.element = element;
             Morris[scope.chartType](scope.config);
         }
-    }
+    };
 });
