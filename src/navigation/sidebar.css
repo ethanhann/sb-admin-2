@@ -15,18 +15,6 @@
     background-color: #eee;
 }
 
-.sidebar .arrow {
-    float: right;
-}
-
-.sidebar .fa.arrow:before {
-    content: "\f104";
-}
-
-.sidebar .active>a>.fa.arrow:before {
-    content: "\f107";
-}
-
 
 .sidebar > .sidebar-nav > ul > li > ul > li,
 .sidebar > .sidebar-nav > ul > li > ul > li > ul > li {
