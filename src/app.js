@@ -1,10 +1,10 @@
 angular.module('sbAdmin2', [
     'ui.bootstrap',
     'ui.router',
-    'navigation'
+    'eehNavigation'
 ])
-.config(['$stateProvider', '$urlRouterProvider', 'sidebarProvider',
-function ($stateProvider, $urlRouterProvider, sidebarProvider) {
+.config(['$stateProvider', '$urlRouterProvider', 'eehNavigationProvider',
+function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('sbAdmin2', {
@@ -65,7 +65,39 @@ function ($stateProvider, $urlRouterProvider, sidebarProvider) {
             templateUrl: 'login/login.html'
         });
 
-    sidebarProvider.items = [
+    eehNavigationProvider.navbarBrand = {
+        text: 'SB Admin 2.0',
+        state: 'sbAdmin2.authenticated.dashboard'
+    };
+
+    eehNavigationProvider.navbarDropdowns = [
+        {
+            text: 'me',
+            iconClass: 'fa-user',
+            children: [
+                {
+                    text: 'User Profile',
+                    iconClass: 'fa-user',
+                    state: 'sbAdmin2.login'
+                },
+                {
+                    text: 'Settings',
+                    iconClass: 'fa-gear',
+                    state: 'sbAdmin2.login'
+                },
+                {
+                    isDivider: true
+                },
+                {
+                    text: 'Logout',
+                    iconClass: 'fa-sign-out',
+                    state: 'sbAdmin2.login'
+                }
+            ]
+        }
+    ];
+
+    eehNavigationProvider.sidebarItems = [
         {
             text: 'Dashboard',
             iconClass: 'fa-dashboard',
