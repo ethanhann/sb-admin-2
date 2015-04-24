@@ -65,129 +65,131 @@ function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
             templateUrl: 'login/login.html'
         });
 
-    eehNavigationProvider.navbarBrand = {
-        text: 'SB Admin 2.0',
-        state: 'sbAdmin2.authenticated.dashboard'
-    };
+    eehNavigationProvider.navbarBrand.text = 'SB Admin 2.0';
+    eehNavigationProvider.navbarBrand.state = 'sbAdmin2.authenticated.dashboard';
 
-    eehNavigationProvider.navbarDropdowns = [
-        {
+    eehNavigationProvider
+        .navbarMenuItem('user', {
             text: 'me',
+            iconClass: 'fa-user'
+        })
+        .navbarMenuItem('user.login', {
+            text: 'User Profile',
             iconClass: 'fa-user',
-            children: [
-                {
-                    text: 'User Profile',
-                    iconClass: 'fa-user',
-                    state: 'sbAdmin2.login'
-                },
-                {
-                    text: 'Settings',
-                    iconClass: 'fa-gear',
-                    state: 'sbAdmin2.login'
-                },
-                {
-                    isDivider: true
-                },
-                {
-                    text: 'Logout',
-                    iconClass: 'fa-sign-out',
-                    state: 'sbAdmin2.login'
-                }
-            ]
-        }
-    ];
+            state: 'sbAdmin2.login'
+        })
+        .navbarMenuItem('user.settings', {
+            text: 'Settings',
+            iconClass: 'fa-gear',
+            state: 'sbAdmin2.login'
+        })
+        .navbarMenuItem('user.divider', {
+            isDivider: true
+        })
+        .navbarMenuItem('user.divider', {
+            text: 'Logout',
+            iconClass: 'fa-sign-out',
+            state: 'sbAdmin2.login'
+        });
 
-    eehNavigationProvider.sidebarItems = [
-        {
+    eehNavigationProvider
+        .sidebarMenuItem('dashboard', {
             text: 'Dashboard',
             iconClass: 'fa-dashboard',
             state: 'sbAdmin2.authenticated.dashboard'
-        },
-        {
+        })
+        .sidebarMenuItem('charts', {
             text: 'Charts',
             iconClass: 'fa-bar-chart-o',
-            isCollapsed: true,
-            children: [
-                {
-                    text: 'Flot',
-                    state: 'sbAdmin2.authenticated.flot'
-                },
-                {
-                    text: 'Morris',
-                    state: 'sbAdmin2.authenticated.morris'
-                }
-            ]
-        },
-        {
+            isCollapsed: true
+        })
+        .sidebarMenuItem('charts.flot', {
+            text: 'Flot',
+            state: 'sbAdmin2.authenticated.flot'
+        })
+        .sidebarMenuItem('charts.morris', {
+            text: 'Morris',
+            state: 'sbAdmin2.authenticated.morris'
+        })
+        .sidebarMenuItem('tables', {
             text: 'Tables',
             iconClass: 'fa-table',
             state: 'sbAdmin2.authenticated.tables'
-        },
-        {
+        })
+        .sidebarMenuItem('forms', {
             text: 'Forms',
             iconClass: 'fa-edit',
             state: 'sbAdmin2.authenticated.forms'
-        },
-        {
+        })
+        .sidebarMenuItem('ui-elements', {
             text: 'UI Elements',
             iconClass: 'fa-wrench',
-            isCollapsed: true,
-            children: [
-                {
-                    text: 'Panels and Wells',
-                    state: 'sbAdmin2.authenticated.panels-wells'
-                },
-                {
-                    text: 'Buttons',
-                    state: 'sbAdmin2.authenticated.buttons'
-                },
-                {
-                    text: 'Notifications',
-                    state: 'sbAdmin2.authenticated.notifications'
-                },
-                {
-                    text: 'Typography',
-                    state: 'sbAdmin2.authenticated.typography'
-                },
-                {
-                    text: 'Grid',
-                    state: 'sbAdmin2.authenticated.grid'
-                }
-            ]
-        },
-        {
+            isCollapsed: true
+        })
+        .sidebarMenuItem('ui-elements.panels-and-wells', {
+            text: 'Panels and Wells',
+            state: 'sbAdmin2.authenticated.panels-wells'
+        })
+        .sidebarMenuItem('ui-elements.buttons', {
+            text: 'Buttons',
+            state: 'sbAdmin2.authenticated.buttons'
+        })
+        .sidebarMenuItem('ui-elements.notifications', {
+            text: 'Notifications',
+            state: 'sbAdmin2.authenticated.notifications'
+        })
+        .sidebarMenuItem('ui-elements.typography', {
+            text: 'Typography',
+            state: 'sbAdmin2.authenticated.typography'
+        })
+        .sidebarMenuItem('ui-elements.grid', {
+            text: 'Grid',
+            state: 'sbAdmin2.authenticated.grid'
+        })
+        .sidebarMenuItem('multi-level-dropdown', {
             text: 'Multi-Level Dropdown',
             iconClass: 'fa-sitemap',
-            isCollapsed: true,
-            children: [
-                { text: 'Second Level Item', state: 'sbAdmin2.authenticated.blank' },
-                { text: 'Second Level Item', state: 'sbAdmin2.authenticated.blank' },
-                {
-                    text: 'Third Level',
-                    isCollapsed: true,
-                    children: [
-                        { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' },
-                        { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' },
-                        { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' },
-                        { text: 'Third Level Item', state: 'sbAdmin2.authenticated.blank' }
-                    ]
-                }
-            ]
-        },
-        {
+            isCollapsed: true
+        })
+        .sidebarMenuItem('multi-level-dropdown.second-level-item1', {
+            text: 'Second Level Item',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('multi-level-dropdown.second-level-item2', {
+            text: 'Second Level Item',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('multi-level-dropdown.third-level', {
+            text: 'Third Level',
+            isCollapsed: true
+        })
+        .sidebarMenuItem('multi-level-dropdown.third-level.item1', {
+            text: 'Third Level Item',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('multi-level-dropdown.third-level.item2', {
+            text: 'Third Level Item',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('multi-level-dropdown.third-level.item3', {
+            text: 'Third Level Item',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('multi-level-dropdown.third-level.item4', {
+            text: 'Third Level Item',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('sample-pages', {
             text: 'Sample Pages',
             iconClass: 'fa-files-o',
-            isCollapsed: true,
-            children: [
-                {
-                    text: 'Blank Page',
-                    state: 'sbAdmin2.authenticated.blank'
-                },
-                {
-                    text: 'Login',
-                    state: 'sbAdmin2.login'
-                }
-            ]
-        }
-    ];
+            isCollapsed: true
+        })
+        .sidebarMenuItem('sample-pages.blank-page', {
+            text: 'Blank Page',
+            state: 'sbAdmin2.authenticated.blank'
+        })
+        .sidebarMenuItem('sample-pages.login', {
+            text: 'Login',
+            state: 'sbAdmin2.login'
+        });
 }]);
