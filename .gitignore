@@ -1,6 +1,6 @@
 .idea/
-/bower_components
-/node_modules
-/dev
-/prod
-npm-debug.log
+node_modules/
+bower_components/
+.sass-cache/
+.tmp/
+dist/

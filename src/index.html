@@ -1,56 +1,57 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="sbAdmin2">
-<head>
+<!doctype html>
+<html ng-app="sbAdmin2">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sbAdmin2</title>
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
-    <!-- build:css(.) vendor.css -->
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/DataTables/media/css/jquery.dataTables.css" />
-    <link rel="stylesheet" href="bower_components/morrisjs/morris.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
-    <link rel="stylesheet" href="bower_components/eeh-navigation/dist/eeh-navigation.css" />
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css main.css -->
-    <link href="tables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="sb-admin-2/timeline.css" rel="stylesheet">
-    <link href="sb-admin-2/sb-admin-2.css" rel="stylesheet">
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
     <!-- endbuild -->
-</head>
-<body>
-    <ui-view></ui-view>
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-    <!-- build:rawjs(.) vendor.js -->
+    <div ui-view></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-    <script src="bower_components/respond/dest/respond.src.js"></script>
-    <script src="bower_components/DataTables/media/js/jquery.dataTables.js"></script>
-    <script src="bower_components/raphael/raphael.js"></script>
-    <script src="bower_components/mocha/mocha.js"></script>
-    <script src="bower_components/morrisjs/morris.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-translate/angular-translate.js"></script>
-    <script src="bower_components/eeh-navigation/dist/eeh-navigation.js"></script>
-    <script src="bower_components/eeh-navigation/dist/eeh-navigation.tpl.js"></script>
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js main.js -->
-    <script src="sb-admin-2/sb-admin-2.js"></script>
-    <script src="app.js"></script>
-    <script src="morris/morris.js"></script>
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automatically insert here -->
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
     <!-- endbuild -->
-</body>
+
+  </body>
 </html>

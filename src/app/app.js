@@ -1,7 +1,9 @@
 angular.module('sbAdmin2', [
+    'eehNavigation',
+    'ngAnimate',
+    'ngResource',
     'ui.bootstrap',
-    'ui.router',
-    'eehNavigation'
+    'ui.router'
 ])
 .config(['$stateProvider', '$urlRouterProvider', 'eehNavigationProvider',
 function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
@@ -9,60 +11,60 @@ function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
     $stateProvider
         .state('sbAdmin2', {
             abstract: true,
-            templateUrl: 'app.html'
+            templateUrl: 'app/app.html'
         })
         .state('sbAdmin2.authenticated', {
             abstract: true,
-            templateUrl: 'authenticated/authenticated.html'
+            templateUrl: 'app/authenticated/authenticated.html'
         })
         .state('sbAdmin2.authenticated.blank', {
             url: '/blank',
-            templateUrl: 'blank/blank.html'
+            templateUrl: 'app/blank/blank.html'
         })
         .state('sbAdmin2.authenticated.buttons', {
             url: '/buttons',
-            templateUrl: 'buttons/buttons.html'
+            templateUrl: 'app/buttons/buttons.html'
         })
         .state('sbAdmin2.authenticated.dashboard', {
             url: '/',
-            templateUrl: 'dashboard/dashboard.html'
+            templateUrl: 'app/dashboard/dashboard.html'
         })
         .state('sbAdmin2.authenticated.flot', {
             url: '/flot',
-            templateUrl: 'flot/flot.html'
+            templateUrl: 'app/flot/flot.html'
         })
         .state('sbAdmin2.authenticated.forms', {
             url: '/forms',
-            templateUrl: 'forms/forms.html'
+            templateUrl: 'app/forms/forms.html'
         })
         .state('sbAdmin2.authenticated.grid', {
             url: '/grid',
-            templateUrl: 'grid/grid.html'
+            templateUrl: 'app/grid/grid.html'
         })
         .state('sbAdmin2.authenticated.morris', {
             url: '/morris',
-            templateUrl: 'morris/morris.html',
+            templateUrl: 'app/morris/morris.html',
             controller: 'MorrisCtrl'
         })
         .state('sbAdmin2.authenticated.notifications', {
             url: '/notifications',
-            templateUrl: 'notifications/notifications.html'
+            templateUrl: 'app/notifications/notifications.html'
         })
         .state('sbAdmin2.authenticated.panels-wells', {
             url: '/panels-wells',
-            templateUrl: 'panels-wells/panels-wells.html'
+            templateUrl: 'app/panels-wells/panels-wells.html'
         })
         .state('sbAdmin2.authenticated.tables', {
             url: '/tables',
-            templateUrl: 'tables/tables.html'
+            templateUrl: 'app/tables/tables.html'
         })
         .state('sbAdmin2.authenticated.typography', {
             url: '/typography',
-            templateUrl: 'typography/typography.html'
+            templateUrl: 'app/typography/typography.html'
         })
         .state('sbAdmin2.login', {
             url: '/login',
-            templateUrl: 'login/login.html'
+            templateUrl: 'app/login/login.html'
         });
 
     eehNavigationProvider.navbarBrand.text = 'SB Admin 2.0';
