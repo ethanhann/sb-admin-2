@@ -25,6 +25,12 @@ module.exports = function(options) {
       addRootSlash: false
     };
 
+    options.overrides = {
+        flot: {
+            main: ['excanvas.min.js', 'jquery.flot.pie.js', 'jquery.flot.resize.js', 'jquery.flot.time.js', 'jquery.flot.js']
+        }
+    };
+
     return gulp.src(options.src + '/*.html')
       .pipe($.inject(injectStyles, injectOptions))
       .pipe($.inject(injectScripts, injectOptions))

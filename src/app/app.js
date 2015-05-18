@@ -1,4 +1,7 @@
+'use strict';
+
 angular.module('sbAdmin2', [
+    'eehFlot',
     'eehNavigation',
     'ngAnimate',
     'ngResource',
@@ -31,7 +34,8 @@ function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
         })
         .state('sbAdmin2.authenticated.flot', {
             url: '/flot',
-            templateUrl: 'app/flot/flot.html'
+            templateUrl: 'app/flot/flot.html',
+            controller: 'FlotController'
         })
         .state('sbAdmin2.authenticated.forms', {
             url: '/forms',
