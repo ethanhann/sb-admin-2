@@ -1,6 +1,9 @@
-<div id="wrapper">
-    <eeh-navigation-navbar></eeh-navigation-navbar>
-    <eeh-navigation-sidebar>
-        <ui-view></ui-view>
-    </eeh-navigation-sidebar>
-</div>
+<eeh-navigation-navbar></eeh-navigation-navbar>
+<eeh-navigation-sidebar
+        search-icon-class="fa-search"
+        collapsed-menu-item-icon-class="fa-chevron-left"
+        expanded-menu-item-icon-class="fa-chevron-down"
+        collapsed-sidebar-icon-class="fa-arrow-right"
+        expanded-sidebar-icon-class="fa-arrow-left">
+    <ui-view></ui-view>
+</eeh-navigation-sidebar>
