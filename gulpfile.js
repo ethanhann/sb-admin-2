@@ -17,7 +17,7 @@ var options = {
   },
   wiredep: {
     directory: 'bower_components',
-    exclude: [/bootstrap-sass-official\/.*\.js/, /bootstrap\.css/]
+    exclude: [/bootstrap-sass\/.*\.js/, /bootstrap\.css/]
   }
 };
 

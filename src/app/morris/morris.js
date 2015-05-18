@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('sbAdmin2').controller('MorrisCtrl', ['$scope', function ($scope) {
     $scope.morrisAreaConfig = {
         data: [{
@@ -61,13 +63,13 @@ angular.module('sbAdmin2').controller('MorrisCtrl', ['$scope', function ($scope)
 
     $scope.morrisDonutConfig = {
         data: [{
-            label: "Download Sales",
+            label: 'Download Sales',
             value: 12
         }, {
-            label: "In-Store Sales",
+            label: 'In-Store Sales',
             value: 30
         }, {
-            label: "Mail-Order Sales",
+            label: 'Mail-Order Sales',
             value: 20
         }],
         resize: true

@@ -1,34 +1,11 @@
 @import "variables";
-@import "mixins";
 
 // Global Styles
-
 body {
-    background-color: @gray-lightest;
+    background-color: $gray-lightest;
 }
 
 // Wrappers
-
-#wrapper {
-    width: 100%;
-}
-
-#page-wrapper {
-    padding: 0 15px;
-    min-height: 568px;
-    background-color: white;
-}
-
-@media(min-width:768px) {
-    #page-wrapper {
-        position: inherit;
-        margin: 0 0 0 250px;
-        padding: 0 30px;
-        border-left: 1px solid darken(@gray-lightest, 6.5%);
-    }
-}
-
-// Navigation
 
 // --Topbar
 
@@ -100,10 +77,10 @@ body {
 }
 
 .sidebar ul li {
-    border-bottom: 1px solid darken(@gray-lightest, 6.5%);
+    border-bottom: 1px solid darken($gray-lightest, 6.5%);
     a {
         &.active {
-            background-color: @gray-lighter;
+            background-color: $gray-lighter;
         }
     }
 }
@@ -157,23 +134,23 @@ body {
 }
 
 .btn-primary.btn-outline {
-    color: @brand-primary;
+    color: $brand-primary;
 }
 
 .btn-success.btn-outline {
-    color: @brand-success;
+    color: $brand-success;
 }
 
 .btn-info.btn-outline {
-    color: @brand-info;
+    color: $brand-info;
 }
 
 .btn-warning.btn-outline {
-    color: @brand-warning;
+    color: $brand-warning;
 }
 
 .btn-danger.btn-outline {
-    color: @brand-danger;
+    color: $brand-danger;
 }
 
 .btn-primary.btn-outline:hover,
@@ -195,7 +172,7 @@ body {
 .chat li {
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 1px dotted @gray-light;
+    border-bottom: 1px dotted $gray-light;
 }
 
 .chat li.left .chat-body {
@@ -317,46 +294,46 @@ table.dataTable thead .sorting:after {
 }
 
 .panel-green {
-    border-color: @brand-success;
+    border-color: $brand-success;
     .panel-heading {
-        border-color: @brand-success;
+        border-color: $brand-success;
         color: white;
-        background-color: @brand-success;
+        background-color: $brand-success;
     }
     a {
-        color: @brand-success;
+        color: $brand-success;
         &:hover {
-            color: darken(@brand-success, 15%);
+            color: darken($brand-success, 15%);
         }
     }
 }
 
 .panel-red {
-    border-color: @brand-danger;
+    border-color: $brand-danger;
     .panel-heading {
-        border-color: @brand-danger;
+        border-color: $brand-danger;
         color: white;
-        background-color: @brand-danger;
+        background-color: $brand-danger;
     }
     a {
-        color: @brand-danger;
+        color: $brand-danger;
         &:hover {
-            color: darken(@brand-danger, 15%);
+            color: darken($brand-danger, 15%);
         }
     }
 }
 
 .panel-yellow {
-    border-color: @brand-warning;
+    border-color: $brand-warning;
     .panel-heading {
-        border-color: @brand-warning;
+        border-color: $brand-warning;
         color: white;
-        background-color: @brand-warning;
+        background-color: $brand-warning;
     }
     a {
-        color: @brand-warning;
+        color: $brand-warning;
         &:hover {
-            color: darken(@brand-warning, 15%);
+            color: darken($brand-warning, 15%);
         }
     }
 }

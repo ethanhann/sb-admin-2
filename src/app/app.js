@@ -69,6 +69,7 @@ function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
 
     eehNavigationProvider.navbarBrand.text = 'SB Admin 2.0';
     eehNavigationProvider.navbarBrand.state = 'sbAdmin2.authenticated.dashboard';
+    eehNavigationProvider.iconBaseClass('fa');
 
     eehNavigationProvider
         .navbarMenuItem('user', {
