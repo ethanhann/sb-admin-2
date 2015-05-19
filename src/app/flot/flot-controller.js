@@ -1087,42 +1087,30 @@ angular.module('sbAdmin2').controller('FlotController', function ($scope) {
     };
 
     // Flot Moving Line Chart
-
-    var container = $('#flot-line-chart-moving');
-
     // Determine how many data points to keep based on the placeholder's initial size;
     // this gives us a nice high-res plot while avoiding more than one point per pixel.
-
-    var maximumDataPoints = container.outerWidth() / 2 || 300;
-
-    //
-
-    var data = [];
-
+    var maximumDataPoints = 300;
+    var movineLineChartData = [];
     function getRandomData() {
-
-        if (data.length) {
-            data = data.slice(1);
+        if (movineLineChartData.length) {
+            movineLineChartData = movineLineChartData.slice(1);
         }
-
-        while (data.length < maximumDataPoints) {
-            var previous = data.length ? data[data.length - 1] : 50;
+        while (movineLineChartData.length < maximumDataPoints) {
+            var previous = movineLineChartData.length ? movineLineChartData[movineLineChartData.length - 1] : 50;
             var y = previous + Math.random() * 10 - 5;
-            data.push(y < 0 ? 0 : y > 100 ? 100 : y);
+            movineLineChartData.push(y < 0 ? 0 : y > 100 ? 100 : y);
         }
-
         // zip the generated y values with the x values
-
         var res = [];
-        for (var i = 0; i < data.length; ++i) {
-            res.push([i, data[i]])
+        for (var i = 0; i < movineLineChartData.length; ++i) {
+            res.push([i, movineLineChartData[i]])
         }
-
         return res;
     }
 
     $scope.movingLineChart = {
         updateCallback: function (chart, dataset) {
+            console.log('interval');
             dataset[0].data = getRandomData();
             chart.setData(dataset);
             chart.draw();
