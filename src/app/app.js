@@ -2,6 +2,7 @@
 
 angular.module('sbAdmin2', [
     'eehFlot',
+    'eehMorris',
     'eehNavigation',
     'ngAnimate',
     'ngResource',

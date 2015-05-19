@@ -127,17 +127,3 @@ angular.module('sbAdmin2').controller('MorrisCtrl', ['$scope', function ($scope)
         labels: ['Series A', 'Series B']
     };
 }]);
-
-angular.module('sbAdmin2').directive('morris', function () {
-    return {
-        restrict: 'AE',
-        scope: {
-            config: '=morris',
-            chartType: '=morrisChartType'
-        },
-        link: function (scope, element) {
-            scope.config.element = element;
-            Morris[scope.chartType](scope.config);
-        }
-    };
-});
