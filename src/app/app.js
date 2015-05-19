@@ -30,7 +30,8 @@ function ($stateProvider, $urlRouterProvider, eehNavigationProvider) {
         })
         .state('sbAdmin2.authenticated.dashboard', {
             url: '/',
-            templateUrl: 'app/dashboard/dashboard.html'
+            templateUrl: 'app/dashboard/dashboard.html',
+            controller: 'DashboardController'
         })
         .state('sbAdmin2.authenticated.flot', {
             url: '/flot',
