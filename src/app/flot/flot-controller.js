@@ -51,35 +51,22 @@ angular.module('sbAdmin2').controller('FlotController', function ($scope) {
                 pie: {
                     show: true
                 }
-            },
-            grid: {
-                hoverable: true
-            },
-            tooltip: true,
-            tooltipOpts: {
-                content: '%p.0%, %s', // show percentages, rounding to 2 decimal places
-                shifts: {
-                    x: 20,
-                    y: 0
-                },
-                defaultTheme: false
             }
         },
-        dataset:  [[{
-            label: 'Series 0',
+        dataset: [{
+            label: 'Series 1',
             data: 1
         }, {
-            label: 'Series 1',
+            label: 'Series 2',
             data: 3
         }, {
-            label: 'Series 2',
+            label: 'Series 3',
             data: 9
         }, {
-            label: 'Series 3',
+            label: 'Series 4',
             data: 20
-        }]]
+        }]
     };
-
 
     // Multiple Axes Line Chart Example
     var oilPrices = [
@@ -1068,13 +1055,8 @@ angular.module('sbAdmin2').controller('FlotController', function ($scope) {
             tooltip: true,
             tooltipOpts: {
                 content: '%s for %x was %y',
-                xDateFormat: '%y-%0m-%0d',
-
-                onHover: function(flotItem, $tooltipEl) {
-                    // console.log(flotItem, $tooltipEl);
-                }
+                xDateFormat: '%y-%0m-%0d'
             }
-
         },
         dataset: [{
             data: oilPrices,
@@ -1103,7 +1085,7 @@ angular.module('sbAdmin2').controller('FlotController', function ($scope) {
         // zip the generated y values with the x values
         var res = [];
         for (var i = 0; i < movineLineChartData.length; ++i) {
-            res.push([i, movineLineChartData[i]])
+            res.push([i, movineLineChartData[i]]);
         }
         return res;
     }
