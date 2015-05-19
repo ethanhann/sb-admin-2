@@ -65,7 +65,7 @@ angular.module('sbAdmin2').controller('FlotController', function ($scope) {
                 defaultTheme: false
             }
         },
-        dataset:  [{
+        dataset:  [[{
             label: 'Series 0',
             data: 1
         }, {
@@ -77,11 +77,11 @@ angular.module('sbAdmin2').controller('FlotController', function ($scope) {
         }, {
             label: 'Series 3',
             data: 20
-        }]
+        }]]
     };
 
-    // Multiple Axes Line Chart Example
 
+    // Multiple Axes Line Chart Example
     var oilPrices = [
         [1167692400000, 61.05],
         [1167778800000, 58.32],
