@@ -1,9 +1,14 @@
-<eeh-navigation-navbar></eeh-navigation-navbar>
+<eeh-navigation-navbar
+        menu-name="'navbar'"
+        brand-text="'SB Admin 2.0'"
+        brand-state="'sbAdmin2.authenticated.dashboard'"
+        ></eeh-navigation-navbar>
 <eeh-navigation-sidebar
-        search-icon-class="fa-search"
-        collapsed-menu-item-icon-class="fa-chevron-left"
-        expanded-menu-item-icon-class="fa-chevron-down"
-        collapsed-sidebar-icon-class="fa-arrow-right"
-        expanded-sidebar-icon-class="fa-arrow-left">
+        menu-name="'sidebar'"
+        search-input-icon-class="'fa-search'"
+        menu-item-collapsed-icon-class="'fa-chevron-left'"
+        menu-item-expanded-icon-class="'fa-chevron-down'"
+        sidebar-collapsed-icon-class="'fa-arrow-right'"
+        sidebar-expanded-icon-class="'fa-arrow-left'">
     <ui-view></ui-view>
 </eeh-navigation-sidebar>

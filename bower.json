@@ -15,7 +15,7 @@
     "DataTables": "~1.10.2",
     "morrisjs": "~0.5.1",
     "bootstrap-social": "~4.6.0",
-    "eeh-navigation": "4.0.0-alpha1",
+    "eeh-navigation": "4.1.2",
     "flot": "~0.8.3",
     "flot.tooltip": "~0.8.5",
     "eeh-flot": "~0.1.3",
